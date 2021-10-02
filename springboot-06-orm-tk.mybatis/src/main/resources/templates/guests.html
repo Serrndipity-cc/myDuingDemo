@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>中餐厅</h1>
+    <table>
+        <tr>
+            <th>姓名</th>
+            <th>职位</th>
+            <th>操作</th>
+        </tr>
+        <tr th:each="guest:${guests}">
+            <td th:text="${guest.name}">name</td>
+            <td th:text="${guest.role}">role</td>
+            <td> <a href="add" th:href="@{/add}" >添加</a> | <a href="delete" th:href="@{/delete}">删除</a> </td>
+        </tr>
+    </table>
+</body>
+</html>
